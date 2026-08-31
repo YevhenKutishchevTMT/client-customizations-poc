@@ -9,7 +9,7 @@ interface TodoListProps {
 
 export function TodoList({ todos, onToggle, onRemove }: TodoListProps) {
   if (todos.length === 0) {
-    return <p className="empty">Завдань поки немає</p>
+    return <p className="empty">No tasks yet</p>
   }
 
   return (

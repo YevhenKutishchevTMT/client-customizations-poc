@@ -24,10 +24,10 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Список завдань</h1>
+      <h1>Todo List</h1>
       <TodoForm onAdd={addTodo} />
       <TodoList todos={todos} onToggle={toggleTodo} onRemove={removeTodo} />
-      <TodoCounter remaining={remaining} total={todos.length} />
+      {todos.length > 0 && <TodoCounter remaining={remaining} total={todos.length} />}
     </div>
   )
 }

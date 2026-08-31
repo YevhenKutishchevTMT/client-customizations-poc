@@ -1,14 +1,12 @@
-interface TodoCounterProps {
-  remaining: number
-  total: number
-}
+import { withOverride } from '../slots/withOverride'
+import type { SlotPropsMap } from '../slots/types'
 
-export function TodoCounter({ remaining, total }: TodoCounterProps) {
-  if (total === 0) return null
-
+function TodoCounterBase({ remaining, total }: SlotPropsMap['todo.counter']) {
   return (
     <p className="counter">
-      Залишилось: {remaining} із {total}
+      {remaining} of {total} remaining
     </p>
   )
 }
+
+export const TodoCounter = withOverride('todo.counter')(TodoCounterBase)
